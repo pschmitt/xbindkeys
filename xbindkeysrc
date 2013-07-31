@@ -37,88 +37,103 @@
 
 #term
 "urxvtc"
-    m:0x41 + c:36
     Shift+Mod4 + Return 
 
 #browser
 "$BROWSER"
-    m:0x40 + c:25
     Mod4 + w 
 
 #play/pause
 "mpc toggle"
-    m:0xc + c:111
     Control+Alt + Up 
+
+#play/pause (XF86)
+"mpc toggle"
+    XF86AudioPlay
 
 #stop
 "mpc stop"
-    m:0xc + c:116
     Control+Alt + Down 
 
 #forward
 "mpc next"
-    m:0xc + c:114
     Control+Alt + Right 
 
+#forward (XF86)
+"mpc next"
+    XF86AudioNext 
+
 #previous
-"mpc previous"
-    m:0xc + c:113
+"mpc prev"
     Control+Alt + Left 
+
+#previous (XF86)
+"mpc prev"
+    XF86AudioPrev 
 
 #screenshot
 "scrot '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f /home/pschmitt/pictures/scrot/'"
-    m:0x0 + c:107
     Print 
 
 #screenshot in 3secs
 "scrot -d 3 '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f /home/pschmitt/pictures/scrot'"
-    m:0x4 + c:107
     Control + Print 
 
 #lock
 "i3lock -b -i /home/pschmitt/pictures/wallpapers/me\ gusta\ mucho_1366.png"
-    m:0x40 + c:133
     Mod4 + Super_L 
 
 #htop
 "urxvtc -e htop"
-    m:0xc + c:119
     Control+Alt + Delete 
 
 #rewind
 "mpc seek -00:00:01"
-    m:0x1 + c:113
     Shift + Left 
 
 #fast_forward
 "mpc seek +00:00:01"
-    m:0x1 + c:114
     Shift + Right 
 
 #iTan
 "gksudo mupdf /home/pschmitt/docs/banking/comdirect/iTAN_02.pdf"
-    m:0x48 + c:31
     Alt+Mod4 + i 
 
 #vol_up
-"amixer -c 0 sset Master 1- & amixer -c 0 sset Master unmute &"
-    m:0x0 + c:123
+"amixer -c 0 sset Master 1+ & amixer -c 0 sset Master unmute &"
     XF86AudioRaiseVolume 
 
 #vol_down
-"amixer -c 0 sset Master 1+ & amixer -c 0 sset Master unmute &"
-    m:0x0 + c:122
+"amixer -c 0 sset Master 1- & amixer -c 0 sset Master unmute &"
     XF86AudioLowerVolume 
 
 #mute
-"amixer -c 0 sset Master toggle"
-    m:0x0 + c:121
+"amixer sset Master toggle"
     XF86AudioMute 
 
 #hibernate
 "systemctl hibernate"
-    m:0x0 + c:150
     XF86Sleep 
+
+#branlette
+"LD_PRELOAD=/usr/lib/libfullscreenhack.so firefox -P ''porn'' -no-remote -private"
+    Alt+Mod2+Mod4 + w 
+
+#vlc next
+"vlc_clirc next"
+    Mod2 + XF86AudioNext 
+
+#vlc previous
+"vlc_clirc prev"
+    Mod2 + XF86AudioPrev 
+
+#vlc play/pause
+"vlc_clirc toggle"
+    Mod2 + XF86AudioPlay 
+
+#xbmc
+"xbmc"
+    Shift+Mod2+Mod4 + x 
 
 #
 # End of xbindkeys configuration
