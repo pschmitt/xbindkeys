@@ -8,23 +8,23 @@
 # The pound(#) symbol may be used anywhere for comments.
 #
 # A list of keys is in /usr/include/X11/keysym.h and in
-# /usr/include/X11/keysymdef.h 
-# The XK_ is not needed. 
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
 #
-# List of modifier (on my keyboard): 
-#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
-#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
+# List of modifier (on my keyboard):
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
 #
-# Another way to specifie a key is to use 'xev' and set the 
-# keycode with c:nnn or the modifier with m:nnn where nnn is 
-# the keycode or the state returned by xev 
+# Another way to specifie a key is to use 'xev' and set the
+# keycode with c:nnn or the modifier with m:nnn where nnn is
+# the keycode or the state returned by xev
 #
-# This file is created by xbindkey_config 
-# The structure is : 
-# # Remark 
-# "command" 
-# m:xxx + c:xxx 
-# Shift+... 
+# This file is created by xbindkey_config
+# The structure is :
+# # Remark
+# "command"
+# m:xxx + c:xxx
+# Shift+...
 
 
 
@@ -37,103 +37,105 @@
 
 #term
 "urxvtc"
-    Shift+Mod4 + Return 
+   Shift+Mod4 + Return
 
 #browser
 "$BROWSER"
-    Mod4 + w 
+   Mod4 + w
 
 #play/pause
 "mpc toggle"
-    Control+Alt + Up 
+   Control+Alt + Up
 
 #play/pause (XF86)
 "mpc toggle"
-    XF86AudioPlay
+   XF86AudioPlay
 
 #stop
 "mpc stop"
-    Control+Alt + Down 
+   Control+Alt + Down
 
 #forward
 "mpc next"
-    Control+Alt + Right 
+   Control+Alt + Right
 
 #forward (XF86)
 "mpc next"
-    XF86AudioNext 
+   XF86AudioNext
 
 #previous
 "mpc prev"
-    Control+Alt + Left 
+   Control+Alt + Left
 
 #previous (XF86)
 "mpc prev"
-    XF86AudioPrev 
+   XF86AudioPrev
 
 #screenshot
 "scrot '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f /home/pschmitt/pictures/scrot/'"
-    Print 
+   Print
 
 #screenshot in 3secs
 "scrot -d 3 '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f /home/pschmitt/pictures/scrot'"
-    Control + Print 
+   Control + Print
 
 #lock
 "i3lock -b -i /home/pschmitt/pictures/wallpapers/me\ gusta\ mucho_1366.png"
-    Mod4 + Super_L 
+   Mod4 + Super_L
 
 #htop
 "urxvtc -e htop"
-    Control+Alt + Delete 
+   Control+Alt + Delete
 
 #rewind
 "mpc seek -00:00:01"
-    Shift + Left 
+   Shift + Left
 
 #fast_forward
 "mpc seek +00:00:01"
-    Shift + Right 
+   Shift + Right
 
 #iTan
 "gksudo mupdf /home/pschmitt/docs/banking/comdirect/iTAN_02.pdf"
-    Alt+Mod4 + i 
+   Alt+Mod4 + i
 
 #vol_up
-"amixer -c 0 sset Master 1+ & amixer -c 0 sset Master unmute &"
-    XF86AudioRaiseVolume 
+"pamixer --allow-boost --increase 5; pamixer --unmute"
+    m:0x10 + c:123
+    Mod2 + XF86AudioRaiseVolume
 
 #vol_down
-"amixer -c 0 sset Master 1- & amixer -c 0 sset Master unmute &"
-    XF86AudioLowerVolume 
+"pamixer --allow-boost --decrease 5; pamixer --unmute"
+    m:0x10 + c:122
+    Mod2 + XF86AudioLowerVolume
 
 #mute
-"amixer sset Master toggle"
-    XF86AudioMute 
+"pamixer --toggle"
+   XF86AudioMute
 
 #hibernate
 "systemctl hibernate"
-    XF86Sleep 
+   XF86Sleep
 
 #branlette
 "LD_PRELOAD=/usr/lib/libfullscreenhack.so firefox -P ''porn'' -no-remote -private"
-    Alt+Mod2+Mod4 + w 
+   Alt+Mod2+Mod4 + w
 
 #vlc next
 "vlc_clirc next"
-    Mod2 + XF86AudioNext 
+   Mod2 + XF86AudioNext
 
 #vlc previous
 "vlc_clirc prev"
-    Mod2 + XF86AudioPrev 
+   Mod2 + XF86AudioPrev
 
 #vlc play/pause
 "vlc_clirc toggle"
-    Mod2 + XF86AudioPlay 
+   Mod2 + XF86AudioPlay
 
 #xbmc
 "xbmc"
-    Shift+Mod2+Mod4 + x 
+   Shift+Mod2+Mod4 + x
 
 #
 # End of xbindkeys configuration
